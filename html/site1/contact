@@ -1,0 +1,31 @@
+<!-- お問い合わせ投稿サイト -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>お問い合わせ - WAVE
+</title>
+</head>
+<article>
+<h1>お問い合わせ</h1>
+
+<p>ご意見、ご感想などがありましたら、以下の欄にご記入の上、送信ください。記事に関するご質問などもお気軽にお寄せください。</p>
+
+<!--　名前の記入 inputタグで一行のデータを送信(type属性をtext指定①　またコントロール名を指定してデータを区別する。②　<input type=①　name = ②>　またlabelタグでラベルであることを明示-->
+<p>
+<label> 
+名前:
+<input type="text" name="name">
+</label>
+</p>
+
+<!-- 同じくメールアドレスの入力欄を作成 email属性の場合、警告が発生しうる-->
+<p>
+<label> 
+メールアドレス:
+<input type="email" name="mail">
+</label>
+</p>
+
+</article>
+</html>
