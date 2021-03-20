@@ -1,0 +1,23 @@
+//coffeeメニュー選択関数
+function getPrice(menu){
+    
+    let res;
+    
+    switch(menu){
+            
+        case "caferatte":
+        case "orangejuice":
+        case "milk":
+            res = 300;
+
+        case "chocolatepaffe":
+        case "strawberrycake":
+        case "cheesecake":
+            res = 800;
+
+        default:
+            res = 500;
+    }
+
+return res  
+}
