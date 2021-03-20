@@ -1,0 +1,24 @@
+<!--文字コードUTF-8指定-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>WAVE</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+
+<!--サイト名をheaderで指定、セマンティクス意識-->
+<header>MATH</header>
+
+<!--ナビゲーションメニュー作成-->
+<nav>
+<ul>
+<a href="index.html">トップページ</a>
+<a href = "about.html">サイトについて</a>
+<a href = "about.html">お問い合わせ</a>
+</ul>
+</nav>
+
+</body>
+</html>
