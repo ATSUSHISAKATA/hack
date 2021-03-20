@@ -20,5 +20,16 @@
 </ul>
 </nav>
 
+<!-- figureは単独のコンテンツであることを示す-->
+<figure>
+<img src="img/ball.gif" alt="ヒーローイメージ">
+</figure>
+
+<!--タイトル、見出しはhタグで指定-->
+<h1>Best place to visit in the world</h1>
+
+<!--サブタイトルはpタグで指定-->
+<p><a href="#">線形代数教材集</a></p>
+
 </body>
 </html>
