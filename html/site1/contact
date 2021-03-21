@@ -1,4 +1,3 @@
-<!-- お問い合わせ投稿サイト -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -11,7 +10,9 @@
 
 <p>ご意見、ご感想などがありましたら、以下の欄にご記入の上、送信ください。記事に関するご質問などもお気軽にお寄せください。</p>
 
-<!--　名前の記入 inputタグで一行のデータを送信(type属性をtext指定①　またコントロール名を指定してデータを区別する。②　<input type=①　name = ②>　またlabelタグでラベルであることを明示-->
+<!-- formタグで入力フォームであることを示す-->
+<form>
+<!--名前の記入 inputタグで一行のデータを送信(type属性をtext指定①　またコントロール名を指定してデータを区別する。②　<input type=①　name = ②>　またlabelタグでラベルであることを明示-->
 <p>
 <label> 
 名前:
@@ -26,6 +27,17 @@
 <input type="email" name="mail">
 </label>
 </p>
+
+<!-- コメント欄記述,textareは複数行の入力を可能にする-->
+<p>
+<label> コメント:
+<textarea name="comment"></textarea>
+</label>
+</p>
+
+<!-- 送信ボタンを記述 type属性をsubmitで可能 valueを送信とすることで「送信」と表示されたボタン作成可能 -->
+<p><input type="submit" value="送信"></p>
+</form>
 
 </article>
 </html>
