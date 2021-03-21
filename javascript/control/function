@@ -18,3 +18,13 @@ argVariable = {coffee:500,milk:300,tea:250};
 myFunc(argobj);
 console.log(argobj);
 //出力は{coffee: 400, milk: 300, tea: 250}となり、元のオブジェクトのプロパティ値は変更される。
+
+//配列の場合も同様、要素を書き換えると呼び出し元でも内容は変わる。
+function myFunc(argArray){
+    argArray[0] = "coke";
+}
+
+argArray = ["coffee","milk","tea"];
+myFunc(argArray);
+console.log(argArray);
+//出力　(3) ["coke", "milk", "tea"]
