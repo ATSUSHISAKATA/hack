@@ -1,0 +1,20 @@
+//関数の引数の仕様
+//引数に変数を使用する場合
+function myFunc(argVariable){
+    argVariable = 0;
+}
+
+argVariable = 12;
+myFunc(argVariable);
+console.log(argVariable);
+//出力12 となり、関数スコープの外では変数の値は変更されない。
+
+//関数の引数にオブジェクトを適用する場合
+function myFunc(argobj){
+    argobj.coffee = 400;
+}
+
+argVariable = {coffee:500,milk:300,tea:250};
+myFunc(argobj);
+console.log(argobj);
+//出力は{coffee: 400, milk: 300, tea: 250}となり、元のオブジェクトのプロパティ値は変更される。
