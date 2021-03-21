@@ -1,23 +1,22 @@
 //関数の引数の仕様
-//引数に変数を使用する場合
 function myFunc(argVariable){
     argVariable = 0;
 }
 
-argVariable = 12;
-myFunc(argVariable);
+myFunc(12);
 console.log(argVariable);
 //出力12 となり、関数スコープの外では変数の値は変更されない。
 
-//関数の引数にオブジェクトを適用する場合
+
+//関数の引数にオブジェクトを渡す場合
 function myFunc(argobj){
     argobj.coffee = 400;
 }
 
-argVariable = {coffee:500,milk:300,tea:250};
+argobj = {coffee:500,milk:300,tea:250};
 myFunc(argobj);
 console.log(argobj);
-//出力は{coffee: 400, milk: 300, tea: 250}となり、元のオブジェクトのプロパティ値は変更される。
+//出力は{coffee: 400, milk: 300, tea: 250}となる。　すなわち、元のオブジェクトのプロパティ値は変更される。
 
 //配列の場合も同様、要素を書き換えると呼び出し元でも内容は変わる。
 function myFunc(argArray){
@@ -34,6 +33,8 @@ function myFunc(arg){
     console.log(`私の名前は${arg}です。`);
 }
 
+//
+
 myFunc("花子");
 myFunc();
 
@@ -46,3 +47,38 @@ myFunc("一郎","次郎","三郎","四郎");
 
 //出力は
 //私の名前は一郎です。
+
+//引数が複数与えられた場合、呼び出すときに順番に渡される。
+function myFunc(name, value){
+    console.log(`${name}は${value}円になります。`);
+}
+
+myFunc("サイダー",100);
+//出力は「サイダーは100円になります。」
+myFunc("コーラ",200,300);
+//出力は「コーラは200円になります。」
+myFunc("コーヒー");
+//出力は「コーヒーはundefined円になります。」 2つめがないためundefined適用
+
+//引数に値が渡されないときやundefinedのためにデフォルト引数が指定可能。
+//メニューを作る関数
+function Menu(food="入力してください",price=0){
+    const res = `商品名は${food}:価格は${price});
+    return res
+}
+
+console.log(Menu("",200);
+console.log(Menu();
+???未指定の部分に何も書かないでカンマで飛ばす、クオーテーションを書くのかよく分からない。
+
+//残余引数　...を使うことで、引数を大量にまとめて受け取ることが可能。
+function myFunc(firstOrder,...restOrder){
+    console.log(firstOrder);
+    console.log(restOrder);
+}
+
+console.log(myFunc("coke","coffee","juice","tea"));
+//出力はcoke
+//(3) ["coffee", "juice", "tea"]
+
+    
