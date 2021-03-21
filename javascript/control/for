@@ -27,3 +27,16 @@ for(let i=0 ; i<arr.length ; i++){
 2番目の商品は「tea」
 3番目の商品は「coke」
 */
+
+//for in 文利用 オブジェクトから再帰的に取り出す。
+const item = {name: "curryrice", price: 500, today:"May30th"};
+
+//変数の部分は定数変数でも可能。変数は文字列型となるため、プロパティは［］で取り出す。
+for (let thing in item){
+    console.log(`${thing} : ${item[thing]}`);
+}
+
+//出力
+name : curryrice
+price : 500
+today : May30th
