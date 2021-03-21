@@ -28,3 +28,21 @@ argArray = ["coffee","milk","tea"];
 myFunc(argArray);
 console.log(argArray);
 //出力　(3) ["coke", "milk", "tea"]
+
+//関数へ引数を渡さないときは引数はundefinedとされる。
+function myFunc(arg){
+    console.log(`私の名前は${arg}です。`);
+}
+
+myFunc("花子");
+myFunc();
+
+//出力は
+//私の名前は花子です。
+//私の名前はundefinedです。
+
+//一方多く渡された時は最初の引数のみ適用される。
+myFunc("一郎","次郎","三郎","四郎");
+
+//出力は
+//私の名前は一郎です。
