@@ -1,0 +1,54 @@
+//例外処理
+//例外が起きる関数
+function myFunc(arg){
+  function myFunc2(arg){
+    function myFunc3(arg){
+    //引数のメソッド使用
+      console.log(arg.valueof());
+    }
+    myFunc3(arg);
+  }
+  myFunc2(arg);
+}
+//例外処理
+try{
+  console.log("処理1");
+  myFunc();
+  console.log("エラー未発生");
+}catch(e){
+  console.log(`エラー内容は${e}`)
+}finally{
+  console.log("終わり")
+}
+
+//処理1
+//VM274:19 エラー内容はTypeError: Cannot read property 'valueof' of undefined
+//VM274:21 終わり
+//関数を呼び出すときにエラーが発生。　undefinedにメソッドを呼び出したため発生
+
+//try catch の中にthrowを入れた場合。
+try{
+  console.log("処理1");
+  
+  //throwで例外の内容をcatchの変数に送る。
+  throw "入力ミス";
+  //以下無視される
+  console.log("処理2");
+}catch(e){
+  console.log(`エラー発生 : ${e}`);
+}
+  
+//throwでエラーオブジェクト（日時込み）を投げる
+try{
+  console.log("処理1");
+  
+  if(2000>1900){
+    throw new Error("エラー発生");
+  }else{
+    console.log("nothing");
+  }
+}catch(e){
+  console.log(`エラー　: ${e}`)
+}
+  
+  
