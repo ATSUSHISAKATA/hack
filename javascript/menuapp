@@ -1,0 +1,33 @@
+//商品選択アプリ
+let menu = ["coffee","coke","tea","milk","juice"]
+console.log(`商品は${menu}の中から選んでください`);
+function chooseitem(name){
+  while(n===1){
+    if(name==none || name == Nan){
+      console.log("入力してください");
+    }else if (typeof(name)!= string){
+      console.log("文字列で入力してください");
+    
+    }else{
+      switch(name){
+        case("coffee"):
+          console.log(`コーヒーの価格は450円です`);
+        case("coke"):
+          console.log(`コ-ラの価格は550円です`);
+        case("tea"):
+          console.log(`茶の価格は350円です`);
+        case("milk"):
+          console.log(`ミルクの価格は250円です`);
+        case("juice"):
+          console.log(`ジュースの価格は150円です`);
+        
+        default:
+          console.log("商品を確認ください");
+        break;
+      }
+    }
+}
+
+choseitemu("");
+    
+    
