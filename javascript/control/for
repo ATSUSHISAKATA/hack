@@ -28,7 +28,8 @@ for(let i=0 ; i<arr.length ; i++){
 3番目の商品は「coke」
 */
 
-//for in 文利用 オブジェクトから再帰的に取り出す。
+//for in 文利用 オブジェクトからプロパティ名を順不同で繰り返し取り出して変数に格納。
+//配列の場合はインデックスを格納。
 const item = {name: "curryrice", price: 500, today:"May30th"};
 
 //変数の部分は定数変数でも可能。変数は文字列型となるため、プロパティは［］で取り出す。
@@ -40,3 +41,44 @@ for (let thing in item){
 name : curryrice
 price : 500
 today : May30th
+
+//for of 文利用 反復可能なオブジェクト({}オブジェクトリテラルは除く)から順番通りに取る
+let number = [2,3,5,7];
+let number2 = new Map([["coffee",2],["tea",3],["coke",5]]);
+
+for (const num of number){
+    console.log(num);
+}
+//出力　2,3,5,7
+
+for (const num of number){
+    console.log(num);
+}
+//出力　
+//(2) ["coffee", 2]
+//(2) ["tea", 3]
+//(2) ["coke", 5]
+
+//while 文　条件式がtrueな限り繰り返す。
+let num = 0;
+
+while(num < 11){
+   
+    console.log(num);
+    
+    num ++;
+}
+//出力
+//0
+// 1
+// 2
+//3
+//4
+// 5
+// 6
+// 7
+// 8
+// 9
+// 10
+
+
