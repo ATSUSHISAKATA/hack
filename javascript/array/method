@@ -46,3 +46,32 @@ console.log(arr.log("coffee",2);
 //true
 //false 開始位置が2であるため、なし
 
+//一致する要素がある場合そのインデックスを返す 配列の先頭から探し　=== で一致しているか判断する。
+//第二引数で、探索開始位置を指定可能。 なければ、-1を返す。
+console.log(arr.indexOf("coffee"));
+console.log(arr.indexOf(2));
+console.log(arr.indexOf("2"));
+console.log(arr.indexOf("coffee",1));
+console.log(arr.indexOf("coffee",-1));
+
+//出力
+//0
+//VM360:2 -1 ない 
+//VM360:3 2　
+//VM360:4 -1
+//VM360:5 -1
+
+//一致する要素がある場合そのインデックスを返す。　末尾から探し、　=== で一致しているか判断する.
+//第二引数で探索開始位置を指定可能。
+console.log(arr.lastIndexOf("coffee"));
+console.log(arr.lastIndexOf(2));
+console.log(arr.lastIndexOf("2"));
+console.log(arr.lastIndexOf("coffee",1));
+console.log(arr.lastIndexOf("coffee",-1));
+//VM546:1 0
+//VM546:2 -1
+//VM546:3 2
+//VM546:4 0
+//VM546:5 0
+
+
