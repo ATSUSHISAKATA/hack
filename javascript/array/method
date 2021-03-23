@@ -31,3 +31,18 @@ arr2
 
 arr
 (6) ["コーヒー", "カフェオレ", "ミルクティー", "マッチャ", "サイダー", "牛乳"]
+
+//配列の中に特定の要素が含まれているか判断するメソッド
+let arr = ["coffee,"milk","2"];
+
+console.log(arr.includes("coffee");
+console.log(arr.includes(2);
+console.log(arr.includes("2");
+console.log(arr.log("coffee",2);
+
+//出力
+//true
+//false 2は"2"とはみなされない
+//true
+//false 開始位置が2であるため、なし
+
