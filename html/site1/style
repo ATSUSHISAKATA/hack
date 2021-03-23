@@ -1,6 +1,20 @@
-@charset "UTF-8"
+/*お問い合わせページの各段落の下に余白作成*/
+form p{
+	margin-bottom:20px;
+}
 
-/* 　基本設定　全ての余白を削除　*/
-*{
- margin: 0;
+input,textarea{
+	width:100%;
+	box-sizing: border-box;
+	padding:10px;
+}
+
+textarea{
+	height:120px;
+}
+
+input[type="submit"]{
+	background-color: #ffaa00;
+	border: none;
+	-webkit-appearance: none;
 }
