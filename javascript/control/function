@@ -241,6 +241,106 @@ arr.forEach((x,i)=>{
 //VM378:4 要素番号1のメニューは,milkです
 //VM378:4 要素番号8のメニューは,cokeです
 
+//メソッド、getter,setterのオブジェクト内部への記述方法
+//getter は値を取り出したときの内部での処理　setterは値を代入してオブジェクト内部処理を行う。
+
+//三角関数を作成するオブジェクト
+let triangle = {
+
+    θ :Math.PI,
+
+    cosin(arg1){
+        return Math.cos(arg1);
+    },
+
+    get sin(){
+        return Math.sin(this.θ);
+    },
+
+    get tan(){
+        return Math.tan(this.θ);
+    },
+
+    get cos(){
+        return Math.cos(this.θ);
+    },
+
+    get cosh(){
+        return Math.cosh(this.θ);
+    },
+
+    get sinh(){
+        return Math.sinh(this.θ);
+    },
+
+    set prop(x){
+        this.θ = x;
+    }
+}
+//出力
+triangle.cosin(4);
+//-0.6536436208636119
+triangle.sin
+//1.2246467991473532e-16
+triangle.cos
+//-1
+triangle.cosh
+//11.591953275521519
+triangle.sinh
+//11.548739357257748
+triangle.prop = Math.PI/2;
+//1.5707963267948966
+triangle.sin
+//1
+triangle.cos
+//6.123233995736766e-17
+
+
+//アロー関数
+//関数の新しい書き方。 functionや関数名を記述しない。 =>を用いる
+
+let menu = ["chocolate", "cake","milk","coffee"];
+
+menu.forEach(x => {
+    if (x.length>4){
+        console.log(x);
+    }});
+    
+//出力
+//chocolate
+//coffee
+
+//クロージャ　関数スコープ内以外の変数を取り込んだ関数。
+
+
+function name(){
+    let name1 = "hanako";
+    
+    function call(){
+        console.log(`彼女の名前は${name1}`);
+    }
+    
+    return call
+}
+
+let girl= name();
+
+girl()
+//出力
+//彼女の名前はhanako
+//下でも可能
+function name(){
+    let name1 = "hanako";
+    
+    function call(){
+        console.log(`彼女の名前は${name1}`);
+    }
+    
+    return call()
+}
+
+name()
+
 
 
 
