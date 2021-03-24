@@ -188,6 +188,59 @@ obj.fnc()
 //VM42:3 メソッドの中 {fnc: ƒ}
 //VM42:5 メソッドの中の関数の中 undefined
 
+//findを用いて引数にテスト関数（アロー関数式で記述）を投入して配列の要素を先頭から探索。条件に一致する最初の値を取り出す。なければ、undefinedを返す。
+let array = [10,20,30,40,50];
+
+console.log(array.find(x => x>=25));
+console.log(array.find(x => x>=60);
+
+//出力
+//30
+//VM237:4 undefined
+
+//findIndexの場合はテスト関数でtrueとなる要素の位置を返す。無い場合は-1を返す。
+let arr = [10,20,30,40,50];
+
+console.log(arr.findIndex(x => x>=25));
+console.log(arr.findIndex(x => x>=60));
+
+//出力
+//2
+//-1
+
+//everyメソッドを適用すると、配列の要素全てに対するテスト関数の結果がtrueのときはtrueを返す。
+let arr = [10,20,30,40,50];
+
+console.log(arr.every(x => x>=10));
+console.log(arr.every(x => x>=20));
+
+//出力
+//true
+//false
+
+//someメソッドを用いると、配列の要素の内一つでもテスト関数の結果trueの場合はtrueを返す。)
+console.log(arr.some(x=>50));
+console.log(arr.some(x<10));
+
+//出力
+//true
+//false
+
+//反復処理メソッド
+//.forEach(コールバック関数) 配列から要素を取り出し、コールバック関数で処理を行う。値が代入されていない要素は
+//処理されない。
+
+let arr = ["coffee","milk",,,,,,,"coke"];
+
+arr.forEach((x,i)=>{
+    console.log(`要素番号${i}のメニューは,${x}です`);
+});
+
+//出力
+//要素番号0のメニューは,coffeeです
+//VM378:4 要素番号1のメニューは,milkです
+//VM378:4 要素番号8のメニューは,cokeです
+
 
 
 
