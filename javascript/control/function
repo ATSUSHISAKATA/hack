@@ -151,3 +151,44 @@ function myFunc(){
 //VM1085:6 第二層 undefined
 //VM1085:8 第三層 undefined
 
+//メソッドの中でthisを用いた場合は、thisはそのオブジェクトを指定する。
+let obj = { fnc: function(){
+    console.log("メソッドの中",this);
+    function fnc2(){
+        console.log("メソッドの中の関数の中",this);
+    }, 
+    
+    fnc2();},apple:2
+};
+
+console.log("グローバル",this);
+obj.fnc()
+
+//出力
+//グローバル Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+//VM37:2 メソッドの中 メソッドの中 {apple: 2, fnc: ƒ}
+//VM37:4 メソッドの中の関数の中 Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+
+//メソッドの場合に'use strict'を利用した場合、メソッドの中で定義された関数はundefinedとなる。
+
+'use strict'
+let obj = { fnc: function(){
+    console.log("メソッドの中",this);
+    function fnc2(){
+        console.log("メソッドの中の関数の中",this);
+    }
+    
+    fnc2();
+}};
+
+console.log("グローバル",this);
+obj.fnc()
+//出力
+//グローバル Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+//VM42:3 メソッドの中 {fnc: ƒ}
+//VM42:5 メソッドの中の関数の中 undefined
+
+
+
+
+
