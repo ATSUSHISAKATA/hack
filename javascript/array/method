@@ -74,4 +74,12 @@ console.log(arr.lastIndexOf("coffee",-1));
 //VM546:4 0
 //VM546:5 0
 
+//.map()は配列の繰り返し処理を行う。 引数にコールバック関数を使用して、処理後の値を配列として返す。
+let arr = ["chocolate","cake","milk"];
+
+arr.map(x => x+"2個");
+
+//出力
+// ["chocolate2個", "cake2個", "milk2個"]
+
 
