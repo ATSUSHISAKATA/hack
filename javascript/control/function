@@ -341,7 +341,29 @@ function name(){
 
 name()
 
+//関数objectのメソッドを用いることで関数内部のthisをundefined以外の任意の値に設定可能。
+//関数objectにthisの値を指定する。 .call(設定値,引数),.apply(設定値,引数)
+function fnc1(arg1,arg2,arg3){
+    console.log(this);
+}
+fnc1.call("設定値");
+//VM374:2 String {"設定値"}
 
+function fnc1(arg1,arg2,arg3){
+    console.log(arg1,arg2,arg3,this);
+}
+//引数に配列指定
+fnc1.apply("設定値",[3,3,4]);
+
+//VM524:2 3 3 4 String {"設定値"}
+
+//thisに値を固定させて新しい関数を作成。
+let fnc2 = fnc1.bind("thisにする値");
+
+fnc2([3,4,5]);
+
+//出力
+//(3) [3, 4, 5] String {"thisにする値"}
 
 
 
