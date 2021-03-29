@@ -1,0 +1,25 @@
+//注文内容をダイアログに出力するプログラム。
+//alert, prompt confirmを使用。
+const order = prompt("注文内容を入力ください。","入力内容");
+
+while (order ==null){
+    alert("注文内容を入力ください。");
+}
+
+switch(order){
+    case "coffee":
+        alert(`${order}は500円になります`); 
+    
+    case "coke":
+        alert(`${order}は400円になります`)
+    
+    default :
+        alert(`${order}は600円になります。`);
+    
+}
+const takeout = confirm("店内でお召し上がりですか?");
+if(takeout){
+    alert("今席をご用意します。");
+    }else{
+        alert("お持ち帰りですね.少々お待ちください。");
+}
