@@ -51,7 +51,7 @@ VM1015:3 10002 "count"
 VM1015:9 10003 "finish"
 //正確にはならない　誤差は付く。
 
-//私の北大卒業メールアカウントのURL情報を取り出す。
+//私の北大卒業メールアカウントのURL情報を取り出す。 locationオブジェクトのプロパティを使用。
 location.href
 //URL全体
 "https://mail.google.com/mail/u/1/#inbox"
@@ -70,6 +70,16 @@ location.search
 location.hash
 //#記号の後の部分
 "#inbox"
+
+//locationオブジェクトのメソッド一覧。
+//歌手のtwitterのURLを読み込む
+location.assign("https://twitter.com/chiaki_sato0920");
+//または
+location.href = "https://twitter.com/chiaki_sato0920";
+//現在のURLを再度読み込む。
+location.reload();
+//現在のページを違うURLに切り替える。
+location.replace("https://www.javadrive.jp/javascript/#section_event");
 
 
 
