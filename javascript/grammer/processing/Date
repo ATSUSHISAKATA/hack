@@ -93,6 +93,29 @@ let d = new Date(2021,2,2,9,20);
 d.toISOString();
 "2021-03-02T00:20:00.000Z"
 
+let d = new Date();
+Sat Apr 03 2021 10:32:54 GMT+0900 (日本標準時)
+//データオブジェクトから現在の日時分秒などを取得する。
+console.log(d.getFullyear(),d.getMonth()+1,d.getDate(),d.getHours(),d.getMinutes(),d.getSeconds());
+2021 4 3 10 32 54
+//現在の時刻を2ずつ遅らせる。
+d.setFullYear(d.getFullYear()+1);
+d.setMonth(d.getMonth()+1);
+d.setHours(d.getHours()+1);
+d.setMinutes(d.getMinutes()+1);
+d.setSeconds(d.getSeconds()+1);
+
+console.log(d.getFullYear(),d.getMonth()+1,d.getDate(),d.getHours(),d.getMinutes(),d.getSeconds());
+2023 6 3 12 34 56
+
+//現在の時刻をUTCのデータに変換する。
+console.log(d.getUTCFullYear(),d.getUTCMonth()+1,d.getUTCDate(),d.getUTCHours(),d.getUTCMinutes(),d.getUTCSeconds());
+2023 6 3 3 34 56
+
+//UTCの時間を午前0時に設定する。
+d.setUTCHours(0);
+d
+Fri Jun 02 2023 09:34:56 GMT+0900 (日本標準時)
 
 
 
