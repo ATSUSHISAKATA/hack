@@ -73,15 +73,33 @@ d.toLocaleDateString();
 "1999/1/1"
 
 //イギリスでの今から100年前の時間をフランス圏の形式で取得せよ。
-let d = new Date();
-let d1 = d.valueOf()-100*365*24*60*60*1000;
-let d2 = new Date(d1);
-let d3 = d2.toISOString();
-let d4 = new Date(d3);
-let d5 = d4.toLocaleDateString("fr-FR");
-d5
+let d = new Date("1921-04-02T09:07:00Z");
+let d1 = d.toLocaleDateString("fr-FR");
+d1
+"02/04/1921"
 
-"27/04/1921"
+//日本標準時の時差を指定したデータをISO8601形式で取得。 各数字の部分は2桁で表示。
+let d1 = new Date("2021-04-02T00:00:00+09:00");
+console.log(d1.toISOString());
+2021-03-01T15:00:00.000Z
+
+//UTC(世界協定時)をISO8601形式で取り出す。
+let d= new Date("2021-03-02T09:20:00Z");
+d.toISOString();
+"2021-03-02T09:20:00.000Z"
+
+//現地時間で指定。
+let d = new Date(2021,2,2,9,20);
+d.toISOString();
+"2021-03-02T00:20:00.000Z"
+
+
+
+
+
+
+
+
 
 
 
