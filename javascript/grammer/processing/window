@@ -78,8 +78,12 @@ location.assign("https://twitter.com/chiaki_sato0920");
 location.href = "https://twitter.com/chiaki_sato0920";
 //現在のURLを再度読み込む。
 location.reload();
-//現在のページを違うURLに切り替える。
+//現在のページを違うURLに切り替える。 履歴には保存されない。
 location.replace("https://www.javadrive.jp/javascript/#section_event");
+
+//historyオブジェクトを使用して履歴を利用した操作を行う。　以下はメソッド一覧。
+history.back();
+
 
 
 
