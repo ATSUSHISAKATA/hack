@@ -23,3 +23,53 @@ if(takeout){
     }else{
         alert("お持ち帰りですね.少々お待ちください。");
 }
+
+//1秒ごとに読み上げ10秒たったら止める。
+//メソッドの中に関数と指定時間(インターバル)を設定(アロー関数式)
+let start = new Date();
+let intervalID = setInterval(()=>{
+    console.log(Date.now()-start,"count");
+},1000);
+// メソッドの中に、関数と指定時間を入れて、指定時間後に処理。
+setTimeout(()=>{
+//setIntervalはintervalIDを返す。これを引数として繰り返し処理停止する。    
+    clearInterval(intervalID);
+    console.log(Date.now() -start,"finish");
+},10000);
+
+//output
+1014 "count"
+VM1015:3 2003 "count"
+VM1015:3 3006 "count"
+VM1015:3 4012 "count"
+VM1015:3 5003 "count"
+VM1015:3 6006 "count"
+VM1015:3 7010 "count"
+VM1015:3 8014 "count"
+VM1015:3 9009 "count"
+VM1015:3 10002 "count"
+VM1015:9 10003 "finish"
+//正確にはならない　誤差は付く。
+
+//私の北大卒業メールアカウントのURL情報を取り出す。
+location.href
+//URL全体
+"https://mail.google.com/mail/u/1/#inbox"
+location.protocol
+//URLのプロトコル部分
+"https:"
+location.hostname
+//URLのプロトコルの次の部分（hostnameという)
+"mail.google.com"
+location.pathname
+//hostname以下の部分
+"/mail/u/1/"
+location.search
+//今回はなかったが?以降の部分
+""
+location.hash
+//#記号の後の部分
+"#inbox"
+
+
+
