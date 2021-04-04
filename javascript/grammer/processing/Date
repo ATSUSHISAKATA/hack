@@ -117,9 +117,23 @@ d.setUTCHours(0);
 d
 Fri Jun 02 2023 09:34:56 GMT+0900 (日本標準時)
 
+//経過時間の計測
+let start = Date.now();
 
+for ( let i=0;i<5000;i++){
+  let str1 = "#".repeat(1000);
+  //文字列を配列に格納
+  let arr = [...str1];
+  //全ての要素を結合した文字列返す。
+  let str2 = arr.join();
+}
 
+let end = Date.now()
 
+let diff = end - start;
+console.log(`開始時間は${start}、終了時間は${end}です。経過時間は${diff}ミリ秒です。`);
+
+開始時間は1617502284133、終了時間は1617502284357です。経過時間は224ミリ秒です。
 
 
 
