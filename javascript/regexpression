@@ -21,3 +21,38 @@ re.test(string1);
 //string2のメールアドレスは何か？
 let re = /^[\w_.+-]+@([.+]\.[
 ^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$
+
+//肯定先読み (?=パターン)と記述する。　パターンにマッチした先頭の部分を返す。
+let regex = /word(?=Press)/;
+console.log(regex.test("wordPress"));
+console.log(regex.test("wordbook"));
+console.log(regex.test("wordpPress"));
+
+console.log(regex.exec("wordPress"));
+console.log(regex.exec("wordbook"));
+console.log(regex.exec("wordpPress"));
+
+//出力
+true
+VM76:2 false
+VM76:3 false
+VM76:5 ["word", index: 0, input: "wordPress", groups: undefined]
+VM76:6 null
+VM76:7 null
+
+let regex = /(?=word)word/;
+console.log(regex.test("Press"));
+console.log(regex.test("wordPress"));
+console.log(regex.test("wordpPress"));
+
+console.log(regex.exec("Press"));
+console.log(regex.exec("wordbook"));
+console.log(regex.exec("wordpPress"));
+
+//出力
+false
+VM112:3 true
+VM112:4 true
+VM112:6 null
+VM112:7 ["word", index: 0, input: "wordbook", groups: undefined]
+VM112:8 ["word", index: 0, input: "wordpPress", groups: undefined]
