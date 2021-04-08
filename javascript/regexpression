@@ -56,3 +56,37 @@ VM112:4 true
 VM112:6 null
 VM112:7 ["word", index: 0, input: "wordbook", groups: undefined]
 VM112:8 ["word", index: 0, input: "wordpPress", groups: undefined]
+
+//否定先読み
+//パターンとマッチしないとき、その先頭の部分とマッチする。
+let regex = /text(?!book)/;
+console.log(regex.exec("textbook"));
+console.log(regex.exec("texteditor")[0]);
+//出力
+null
+text
+
+//肯定後読み
+//パターンと一致する場合、その末尾に一致する。
+let regex = /(?<=text)book/;
+console.log(regex.exec("notebook"));
+console.log(regex.exec("textbook")[0]);
+console.log(regex.exec("texteditor"));
+//出力
+null
+VM78:3 book
+
+//否定後読み
+let regex = /(?<!text)book/;
+console.log(regex.exec("notebook")[0]);
+console.log(regex.exec("textbook"));
+console.log(regex.exec("texteditor"));
+//出力
+book
+VM83:3 null
+VM83:4 null
+
+VM78:4 null
+
+
+
