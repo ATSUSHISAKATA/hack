@@ -86,7 +86,29 @@ book
 VM83:3 null
 VM83:4 null
 
-VM78:4 null
+//キャプチャを作成　
+//キャプチャグループを丸括弧で記述することで丸括弧の中のパターンのみを抽出可能。
+let regex = /(\d{4})-(\d{2})-(\d{2})/;
+console.log(regex.exec("私の誕生日は1997-04-12です")[0]);
+console.log(regex.exec("私の誕生日は1997-04-12です")[1]);
+console.log(regex.exec("私の誕生日は1997-04-12です")[2]);
+console.log(regex.exec("私の誕生日は1997-04-12です")[3]);
+//出力
+1997-04-12
+VM113:3 1997
+VM113:4 04
+VM113:5 12
+
+//キャプチャグループ　丸括弧はキャプチャ以外にもグループ化にも利用されるが、キャプチャ機能は残る
+let regex = /(Java|Type)Script/;
+let type = regex.exec("javascript");
+console.log(type[0]);
+console.log(type[1]);
+
+//出力
+JavaScript
+VM134:4 Java
+
 
 
 
