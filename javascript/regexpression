@@ -109,6 +109,13 @@ console.log(type[1]);
 JavaScript
 VM134:4 Java
 
+//キャプチャ機能を捨てる場合。
+let regex = /(?:\d{4})-(\d{2})-(\d{2})/;
+let str = regex.exec("私の誕生日は1997-04-12です");
+console.log(str[0],str[1],str[2]);
+//出力
+VM155:3 1997-04-12 04 12
+
 
 
 
