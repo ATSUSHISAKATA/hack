@@ -1,0 +1,50 @@
+//親クラスを継承して子クラスを作成。
+//料理一覧クラス（親クラス）からサイズ付きクラス（子クラス）作成
+
+class Menu{
+    constructor(name,price){
+        this.name = name;
+        this.price = price;
+    }
+    
+    getInf(){
+        const order = `${this.name}は${this.price}円`;
+        return order;
+    }
+}
+class DrinkMenu extends Menu{
+    constructor(name,price,size){
+        super(name,price);
+        
+        this.size = null;
+        if (size === "S"){this.size=size}
+        if (size === "M"){this.size=size}
+        if (size === "L"){this.size=size}
+    }
+    
+    getInf(){
+        const names = super.getInf();
+        if (this.size!==null){
+            const order = `${names}　サイズは${this.size}`;
+            return order;
+        }else{return names}
+    }
+    
+    getSizeNum(){
+        let amount = null;
+        if (this.size==="S"){amount=200;}
+        if (this.size==="M"){amount=400;}
+        if (this.size==="L"){amount=600;}
+        const number = `量は${amount}ml`;
+        
+        return number
+    }
+}
+
+//クラスをインスタンス化
+let Firstorder = new Menu("チョコケーキ",450);
+let Secondorder = new DrinkMenu("アイスティー",400,"S");
+//
+console.log(Firstorder.getInf());
+console.log(Secondorder.getInf());
+console.log(Secondorder.getSizeNum());
