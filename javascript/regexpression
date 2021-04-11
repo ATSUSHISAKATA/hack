@@ -116,6 +116,51 @@ console.log(str[0],str[1],str[2]);
 //出力
 VM155:3 1997-04-12 04 12
 
+//過去のキャプチャにマッチした値を参照する
+let regex = /<(.+)>.*<\/\1>/;
+let htmlelement = "<ul>Hello</ul>";
+regex.exec(htmlelement)[0];
+//出力
+"<ul>Hello</ul>"
+
+
+//具体例
+//整数を取得
+let number1 = "1234";
+let number2 = -234;
+let string = "hello";
+
+let regex = /^[+-]?[0-9]+$/;
+console.log(regex.test(number1));
+console.log(regex.test(number2));
+console.log(regex.test(string));
+
+//出力
+true
+VM108:3 true
+VM108:4 false
+
+//英数字にマッチするパターン　英数字から始まって英数字で終わる
+let regex = /^[a-zA-Z0-9]+$/;
+let string1 = "hello1234";
+let string2="Hello8909";
+let string3 = "Hello@90";
+
+console.log(regex.test(string1));
+console.log(regex.test(string2));
+console.log(regex.test(string3));
+
+//出力
+true
+VM118:7 true
+VM118:8 false
+
+//浮動小数点数にマッチするパターン
+//ここからとき直し　javadrive 浮動小数点
+
+
+
+
 
 
 
