@@ -156,7 +156,19 @@ VM118:7 true
 VM118:8 false
 
 //浮動小数点数にマッチするパターン
-//ここからとき直し　javadrive 浮動小数点
+//明日もう一度とき直し　javadrive 浮動小数点
+let regex = /^[+-]?[0-9]+\.[0-9]+([0-9]+[eE]?[+-]?)?$/;
+
+console.log(regex.test(23.456));
+console.log(regex.test(-45.5e-6));
+console.log(regex.test(123));
+
+//出力
+true
+VM42:4 true
+VM42:5 false
+
+
 
 
 
