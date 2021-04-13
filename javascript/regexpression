@@ -191,6 +191,25 @@ VM420:4 true
 VM420:5 false
 VM420:6 false
 
+//携帯電話の電話番号にマッチするパターン
+
+let regex = /^0[789]0-[0-9]{4}-[0-9]{4}$/;
+console.log(regex.test("080-1243-9083"));
+console.log(regex.test("070-1243-9083"));
+console.log(regex.test("010-1243-9083"));
+console.log(regex.test("08012439083"));
+
+//出力
+true
+VM469:3 true
+VM469:4 false
+VM469:5 false
+
+//ドメインにマッチするパターン
+//明日とき直し
+
+//メールアドレス
+//固定電話番号
 
 
 
