@@ -1,0 +1,34 @@
+//DOMのgetElementsByClassNameメソッド
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+</head>
+<body>
+    <ul id="menu">
+        <li class="menu">ホットコーヒー</li>
+        <li class="menu">アイスコーヒー</li>
+        <li class="choco">チョコケーキ</li>
+    </ul>
+
+    <script>
+        let elMenu = document.getElementsByClassName("menu");
+		console.log(`選択したメニューの長さは${elMenu.length}`)
+        console.log(`選択したメニューの一つ目は${elMenu[0]}`);
+		console.log(`選択したメニューの３つ目は${elMenu.item(2)}`);
+		console.log(`選択したメニューのchocoクラスはは${elMenu.item("choco")};`)
+        let elMenu2  = document.getElementsByClassName("shop");
+        console.log(`選択したメニューは${elMenu2}`);
+    </script>
+</body>
+</html>
+
+
+<!-出力は
+選択したメニューの長さは2
+DOM_getElementsByClassName.html:15 選択したメニューの一つ目は[object HTMLLIElement]
+DOM_getElementsByClassName.html:16 選択したメニューの３つ目はnull
+DOM_getElementsByClassName.html:17 選択したメニューのchocoクラスはは[object HTMLLIElement];
+DOM_getElementsByClassName.html:19 選択したメニューは[object HTMLCollection]
+->
+
+//要素ノードの中の要素ノードを取り出す。
