@@ -62,3 +62,86 @@ DOM_getElementsByClassName.html:19 選択したメニューは[object HTMLCollec
 	</script>
 </body>
 </html>
+
+<!-class属性がnameの中でid属性がfirstの値を取り出す。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>WAVE</title>
+</head>
+<body>
+<div class="name">
+	<h1 id ="first">田中</h1>
+	<h1 id="second">花子</h1>
+</div>
+<script>
+	name=document.querySelectorAll(".name #first");
+	console.log(`彼女の名前は${name}`);
+</script>
+</body>
+</html>
+
+<!-class属性がname id属性がfirst から複数取り出す。 カンマ入れる。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>WAVE</title>
+</head>
+<body>
+<div class="name">
+	<h1 id ="first">田中</h1>
+	<h1 id="second">花子</h1>
+</div>
+<script>
+	name=document.querySelectorAll(".name, #first");
+	console.log(`彼女の名前は${name}`);
+</script>
+</body>
+</html>
+
+<!-class属性がname の中の子要素から最初のh1を取り出す。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>WAVE</title>
+</head>
+<body>
+<div class="name">
+	<h1 id ="first">田中一郎</h1>
+	<div>
+		<h1 id="greeting">よろしくみなさん</h1>
+	</div>
+</div>
+<script>
+	name=document.querySelectorAll(".name>h1");
+	console.log(`${name}`);
+</script>
+</body>
+</html>
+
+<!指定したCSSセレクタの中でfirst属性の持つ要素ノードを取り出す。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>WAVE</title>
+</head>
+<body>
+<div class="name">
+	<h1 id ="first">田中一郎</h1>
+	<div>
+		<h1 class="greeting">よろしくみなさん</h1>
+	</div>
+</div>
+<script>
+	name=document.querySelectorAll("h1[id]");
+	console.log(`${name}`);
+</script>
+</body>
+</html>
+
+Aのセレクタに一致する要素の中で属性値Bの値がCの要素に一致する(A[B="C"])
+ここから
