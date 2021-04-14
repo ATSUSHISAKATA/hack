@@ -32,3 +32,33 @@ DOM_getElementsByClassName.html:19 選択したメニューは[object HTMLCollec
 ->
 
 //要素ノードの中の要素ノードを取り出す。
+
+<!DOM getElementsByNameメソッド->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+    <title>お問い合わせ</title>
+</head>
+<body>
+    <article>
+    <h1>お問い合わせ</h1>
+    <p>お名前ご記入ください</p>
+    <form>
+    <p>
+    <label>
+    名前:
+    <input type="text" name="name" >
+    </label>
+    </p>
+    </form>
+	<button onClick="getElements();">要素を取得</button>
+	</article>
+
+    <script>
+	function getElements(){
+        let name = document.getElementsByName("name");
+		console.log(`${name.item(0).value}です。`);
+    }
+	</script>
+</body>
+</html>
