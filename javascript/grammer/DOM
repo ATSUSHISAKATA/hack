@@ -143,5 +143,148 @@ DOM_getElementsByClassName.html:19 選択したメニューは[object HTMLCollec
 </body>
 </html>
 
-Aのセレクタに一致する要素の中で属性値Bの値がCの要素に一致する(A[B="C"])
-ここから
+<! セレクタに一致する要素ノードの中で指定した属性に指定した値が設定された要素ノードを取得->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>WAVE</title>
+</head>
+<body>
+<div class="name">
+	<h1 id ="first">田中一郎</h1>
+	<div>
+		<h1 class="greeting">よろしくみなさん</h1>
+	</div>
+</div>
+<script>
+	name=document.querySelectorAll("h1[id=\"first\"]");
+	console.log(`${name}`);
+</script>
+</body>
+</html>
+<! 注意　""の中に""を記述する場合バックスラッシュをつける->
+
+<! 子ノードの取得　->
+<! セレクタに一致する要素ノードの中で指定した属性に指定した値が設定された要素ノードを取得->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="要素を取得" onClick="getEl();"></p>
+<script>
+	function getEl(){
+		let element = document.getElementById("box");
+		let children = element.childNodes;
+		
+		let len = children.length;
+		console.log("ノード数:",len);
+		
+		for (let i =0; i<len;i++){
+			console.log(children[i].nodeName);
+	}
+}
+</script>
+</body>
+</html>
+
+//出力
+ノード数: 5
+rensyu.html:24 #text
+rensyu.html:24 P
+rensyu.html:24 #text
+rensyu.html:24 P
+rensyu.html:24 #text
+<! セレクタに一致する要素ノードの子ノードを前から後へまたは後から前へと取得->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="前から後へ要素を取得" onClick="getEl(1);">
+<input type="submit" value="後から前へ要素を取得" onClick="getEl(2);"></p>
+<script>
+	function getEl(direct){
+		let element = document.getElementById("box");
+				
+		if (direct===1){
+			let child = element.firstChild;
+			
+			while (child){
+				console.log(child.nodeName);
+				child = child.nextSibling;
+			}
+		}else{
+			let child = element.lastChild;
+			
+			while (child){
+				console.log(child.nodeName);
+				child = child.previousSibling;
+			}
+		}
+}
+</script>
+</body>
+</html>
+
+//出力
+#text
+rensyu.html:24 P
+rensyu.html:24 #text
+rensyu.html:24 P
+rensyu.html:24 #text
+rensyu.html:31 #text
+rensyu.html:31 P
+rensyu.html:31 #text
+rensyu.html:31 P
+rensyu.html:31 #text
+
+<! セレクタに一致する要素ノードの親ノードを順次取得->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="要素を取得" onClick="getEl();">
+<script>
+	function getEl(direct){
+		let element = document.getElementById("box");
+		let parent = element.parentNode;
+		while(parent){
+			console.log(parent.nodeName);
+			parent = parent.parentNode;
+		}
+}
+</script>
+</body>
+</html>
+
+//出力
+BODY
+rensyu.html:20 HTML
+rensyu.html:20 #document
+要素ノードの子・親・兄弟要素のノードを取得(children,firstElementChild,nextElementSibling,parentElement,他)
+から
+
