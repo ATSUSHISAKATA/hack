@@ -206,9 +206,39 @@ VM469:4 false
 VM469:5 false
 
 //ドメインにマッチするパターン
-//明日とき直し
+let regex = /^([a-zA-Z0-9]+[a-zA-Z0-9-]*\.)+[a-zA-Z]{2,}$/;
+//出力
+regex.test("example.com");
+true
+regex.test("sub.example-2048.jp");
+true
+regex.test("examplejp");
+false
+regex.test("example.p");
+false
 
-//メールアドレス
+//メールアドレス Gmil outlookのみ
+let regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9]+[a-zA-Z0-9-]*\.)+[a-zA-Z]{2,}$/;
+
+//出力
+regex.test('hoge@example.com');
+true
+regex.test('yamada.tarou@example.com');
+true
+regex.test('suzuki.example.com');
+false
+regex.test('kudou#jirou@examle.com');
+false
+
+//．が二回連続せずまた最初と最後には来ないようにする
+let regex = /^[a-zA-Z0-9_+-]+(.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9]+[a-zA-Z0-9-]*\.)+[a-zA-Z]{2,}$/;
+regex.test('yamada.tarou@example.com');
+true
+regex.test('suzuki..jirou@example.com');
+false
+regex.test('kudouhanako.@examle.com');
+false
+
 //固定電話番号
 
 
