@@ -285,6 +285,36 @@ rensyu.html:31 #text
 BODY
 rensyu.html:20 HTML
 rensyu.html:20 #document
-要素ノードの子・親・兄弟要素のノードを取得(children,firstElementChild,nextElementSibling,parentElement,他)
-から
 
+<! 一階層下のすべてのノードではなく要素ノードのみをとりだす。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="要素を取得" onClick="getEl();">
+<script>
+	function getEl(direct){
+		let element = document.getElementById("box");
+		let childs = element.children;
+		console.log(`要素数:${childs.length}`);
+		for(let i =0;i<childs.length;i++){
+			console.log(childs.item(i).textContent);
+		}
+}
+</script>
+</body>
+</html>
+
+<!出力
+要素数:2
+rensyu.html:21 場所: 港区青山
+rensyu.html:21 店名:　リストランテ
+->
