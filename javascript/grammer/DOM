@@ -361,3 +361,91 @@ rensyu.html:22 店名:　リストランテ
 rensyu.html:28 店名:　リストランテ
 rensyu.html:28 場所: 港区青山
 ->
+
+<! 親要素ノードを順々に取得。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="要素を取得" onClick="getEl();"></p>
+<script>
+	function getEl(direct){
+		let element = document.getElementById("box");
+		let parent = element.parentElement;
+		while(parent){
+			console.log(parent.nodeName);
+			parent = parent.parentElement;
+		}
+	}
+</script>
+</body>
+</html>
+
+<!出力
+BODY
+HTML
+->
+
+<! 子ノードの種類をすべて取得。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="today">
+	<p>	今日はとても天気が良い一日です</p>
+	<!--我が家の朝飯-->
+	<p>場所: 自宅一階</p>
+	<p>内容:　米、野菜と肉の炒め物、豆乳</p>
+</div>
+<p><input type="submit" value="要素を取得" onClick="getEl();"></p>
+<script>
+	function getEl(){
+		const ntype =['ELEMENT',
+                   'ATTRIBUTE',
+                   'TEXT',
+                   'CDATA_SECTION',
+                   'ENTITY_REFERENCE',
+                   'ENTITY',
+                   'PROCESSING_INSTRUCTION',
+                   'COMMENT',
+                   'DOCUMENT',
+                   'DOCUMENT_TYPE',
+                   'DOCUMENT_FRAGMENT',
+                   'NOTATION'];
+
+		let element = document.getElementById("today");
+		let child = element.childNodes;
+
+		let len = child.length;
+		for(let i=0;i<len;i++){
+			console.log(ntype[child.item(i).nodeType-1]);
+		}
+	}
+</script>
+</body>
+</html>
+
+<!出力
+TEXT
+rensyu.html:37 ELEMENT
+rensyu.html:37 TEXT
+rensyu.html:37 COMMENT
+rensyu.html:37 TEXT
+rensyu.html:37 ELEMENT
+rensyu.html:37 TEXT
+rensyu.html:37 ELEMENT
+rensyu.html:37 TEXT
+->
+//nodenameから
