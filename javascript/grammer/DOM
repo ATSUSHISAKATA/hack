@@ -318,3 +318,46 @@ rensyu.html:20 #document
 rensyu.html:21 場所: 港区青山
 rensyu.html:21 店名:　リストランテ
 ->
+
+<! 一階層下の要素ノードを前から後ろ、後ろから前と指定して取り出す。->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>childNodes</title>
+</head>
+<body>
+<p>今日は外でディナーを食べた。</p>
+<div id="box">
+	<p>場所: 港区青山</p>
+	<p>店名:　リストランテ</p>
+</div>
+<p><input type="submit" value="前から後へ要素を取得" onClick="getEl(1);">
+<input type="submit" value="後から前へ要素を取得" onClick="getEl(2);"><p>
+<script>
+	function getEl(direct){
+		let element = document.getElementById("box");
+		if(direct===1){
+			let child = element.firstElementChild;
+			while(child){
+				console.log(child.textContent);
+				child = child.nextElementSibling;
+			}
+		}else{
+			let child = element.lastElementChild;
+			while(child){
+				console.log(child.textContent);
+				child = child.previousElementSibling;
+			}
+		}
+	}
+</script>
+</body>
+</html>
+
+<!出力
+場所: 港区青山
+rensyu.html:22 店名:　リストランテ
+rensyu.html:28 店名:　リストランテ
+rensyu.html:28 場所: 港区青山
+->
