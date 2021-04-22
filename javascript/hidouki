@@ -1,0 +1,43 @@
+//非同期処理100ミリ秒まって実行していく
+console.log("処理1");
+setTimeout(()=>{
+  console.log("処理A");
+  
+  setTimeout(()=>{
+    console.log("処理B");
+    
+    setTimeout(()=>{
+      console.log("処理C");
+    },100);
+  },100);
+},100);
+console.log("処理2");
+
+//出力
+処理1
+VM28:13 処理2
+undefined
+VM28:3 処理A
+VM28:6 処理B
+VM28:9 処理C
+
+//promise
+//上記処理をpromiseを用いて対処
+console.log("処理1");
+
+new Promise((resolve,reject) =>{
+  console.log("処理A");
+  resolve();
+})
+.then(d=>{
+  return new Promise((resolve,reject) =>{
+    console.log("処理B");
+    resolve();
+  });
+})
+.then(d=>{
+  console.log("処理C");
+});
+console.log("処理2");
+
+I
