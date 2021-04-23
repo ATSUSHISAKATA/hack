@@ -650,3 +650,5 @@ DOM_textcontent.html:26 --ここまで--
 
 洋食
 -->
+
+//innerTextはtextContetn同様、置き換えを行うことが可能。　またhtmlタグの場合はエスケープされる。
