@@ -652,3 +652,140 @@ DOM_textcontent.html:26 --ここまで--
 -->
 
 //innerTextはtextContetn同様、置き換えを行うことが可能。　またhtmlタグの場合はエスケープされる。
+
+
+<!- バブリング->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+</head>
+<body>
+    <ul id="menu">
+        <li class="menu">ホットコーヒー</li>
+        <li class="menu">アイスコーヒー</li>
+        <li class="menu">チョコケーキ</li>
+    </ul>
+
+    <script>
+        document.querySelector(".menu").addEventListener("click",e=>console.log(".menu"));
+		document.querySelector("#menu").addEventListener("click",e=>console.log("#menu"));
+		document.querySelector("body").addEventListener("click",e=>console.log("body"));
+		document.querySelector("html").addEventListener("click",e=>console.log("html"));
+		document.addEventListener("click",e=>console.log("document"));
+		window.addEventListener("click",e=>console.log("window"));    
+</script>
+</body>
+</html>
+
+
+<!-出力は
+.menu
+DOM.html:15 #menu
+DOM.html:16 body
+DOM.html:17 html
+DOM.html:18 document
+DOM.html:19 window
+->
+
+<!- イベントの制御->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+</head>
+<body>
+    <h1 id="site">
+        <a href="https://www.google.com/" id="link">
+			<span id="inner">リンク</span>
+		</a>
+    </h1>
+
+    <script>
+        document.querySelector("#inner").addEventListener("click",e=>{console.log("#inner",e.returnValue,e.cancelBubble);
+		e.preventDefault();
+		});
+		document.querySelector("#link").addEventListener("click",e=>{
+		e.stopPropagation();
+		console.log("#link",e.returnValue,e.cancelBubble);
+		});
+		
+		document.querySelector("#site").addEventListener("click",e=>{
+		e.stopPropagation();
+		console.log("#site",e.returnValue,e.cancelBubble);
+		});
+		
+	</script>
+</body>
+</html>
+
+
+<!-出力は
+.menu
+DOM.html:15 #menu
+DOM.html:16 body
+DOM.html:17 html
+DOM.html:18 document
+DOM.html:19 window
+->
+
+<!-要素の様々な属性を操作するプロパティ->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+</head>
+<body>
+    <ul id="item" class="plate">
+        <li class="item1">ホットコーヒー</li>
+        <li class="menu">アイスコーヒー</li>
+        <li class="menu">チョコケーキ</li>
+    </ul>
+
+    <script>
+        const elItem = document.querySelector(".item1");
+		elItem.style.textAlign = "right";
+		const elMenu = document.querySelector("#item");
+		console.log(elMenu.tagName);
+		console.log(elMenu.id);
+		console.log(elMenu.className);		
+
+</script>
+</body>
+</html>
+
+
+<!-出力は
+UL
+DOM.html:18 item
+DOM.html:19 plate
+->
+
+<!-要素を操作するメソッド->
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8";>
+</head>
+<body>
+    <ul id="item" class="plate">
+        <li class="menu">ホットコーヒー</li>
+        <li class="menu">アイスコーヒー</li>
+        <li class="menu">チョコケーキ</li>
+    </ul>
+
+    <script>
+        const elItem = document.querySelectorAll("li");
+		for(let i =0; i < elItem.length; i++){
+			const url = elItem[i].getAttribute("class");
+			console.log(url);
+
+			elItem[i].setAttribute("id",i);
+		}
+		console.log(elItem[2].id);		
+
+</script>
+</body>
+</html>
+
+
+<!-出力は
+menu
+2
+->
